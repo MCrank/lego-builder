@@ -4,8 +4,10 @@ import './index.scss';
 import legoCharacter from './components/LegoCharacter/legoCharacter';
 import './components/SavedCharacters/savedCharacters';
 import partsData from './data/partsData';
+import loadCarouselEvents from './components/events/carouselEvents';
 
 const initApp = () => {
+  loadCarouselEvents();
   partsData
     .getLegoHeads()
     .then((heads) => {
