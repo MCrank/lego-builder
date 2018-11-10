@@ -8,23 +8,23 @@ const isProd = env === 'production';
 
 const extractScss = new ExtractTextPlugin({
   filename: 'index.css',
-  disable: isDev
+  disable: isDev,
 });
 
 module.exports = {
   devtool: 'source-map',
   entry: {
-    bundle: './src/index.js'
+    bundle: './src/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/index.html')
+      template: path.resolve(__dirname, 'src/index.html'),
     }),
-    extractScss
+    extractScss,
   ],
   module: {
     rules: [
@@ -32,7 +32,7 @@ module.exports = {
         enforce: 'pre',
         test: /\.js$/,
         exclude: /node_modules/,
-        use: 'eslint-loader'
+        use: 'eslint-loader',
       },
       {
         test: /\.(png|jp(e*)g|svg)$/,
@@ -41,10 +41,10 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 8000, // Convert images < 8kb to base64 strings
-              name: 'img/[hash]-[name].[ext]'
-            }
-          }
-        ]
+              name: 'img/[hash]-[name].[ext]',
+            },
+          },
+        ],
       },
       {
         test: /\.mp4$/,
@@ -52,28 +52,28 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'img/[name].[ext]'
-            }
-          }
-        ]
+              name: 'img/[name].[ext]',
+            },
+          },
+        ],
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: 'babel-loader',
       },
       {
         test: /(\.css|\.scss)$/,
         exclude: /node_modules/,
         use: extractScss.extract({
           use: [{ loader: 'css-loader' }, { loader: 'sass-loader' }],
-          fallback: 'style-loader'
-        })
-      }
-    ]
+          fallback: 'style-loader',
+        }),
+      },
+    ],
   },
   devServer: {
     historyApiFallback: true,
-    open: isDev ? 'chrome' : false
-  }
+    open: isDev ? 'chrome' : false,
+  },
 };

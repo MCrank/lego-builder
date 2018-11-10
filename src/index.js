@@ -1,7 +1,7 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 import 'bootstrap';
 import './index.scss';
-import './components/LegoCharacter/legoCharacter';
+import legoCharacter from './components/LegoCharacter/legoCharacter';
 import './components/SavedCharacters/savedCharacters';
 import partsData from './data/partsData';
 
@@ -9,7 +9,8 @@ const initApp = () => {
   partsData
     .getLegoHeads()
     .then((heads) => {
-      console.log('Heads: ', heads.data);
+      legoCharacter.loadHeadCarousel(heads.data);
+      $('#head1').addClass('active');
     })
     .catch((error) => {
       console.error(error);
@@ -18,7 +19,8 @@ const initApp = () => {
   partsData
     .getLegoTorsos()
     .then((torsos) => {
-      console.log('Torsos:', torsos.data);
+      legoCharacter.loadTorsoCarousel(torsos.data);
+      $('#torso1').addClass('active');
     })
     .catch((error) => {
       console.error(error);
@@ -27,7 +29,8 @@ const initApp = () => {
   partsData
     .getLegoLegs()
     .then((legs) => {
-      console.log('Legs: ', legs.data);
+      legoCharacter.loadLegCarousel(legs.data);
+      $('#leg1').addClass('active');
     })
     .catch((error) => {
       console.error(error);

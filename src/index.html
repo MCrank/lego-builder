@@ -1,15 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Lego Builder</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Lego Builder</title>
-</head>
+  <body>
+    <h1 class="text-center">Build Thy Lego</h1>
+    <!-- Mini Fig Name -->
+    <div class="legoName">
+      <h1 class="text-center"><span>FirstName</span><span>MiddleName</span><span>LastName</span></h1>
+    </div>
 
-<body>
-  <h1>Build Thy Lego</h1>
-</body>
+    <!-- Mini Fig Head Carousel -->
+    <div class="container">
+      <div id="head-carousel" class="carousel slide mx-auto" style="width: 15rem;" data-interval="false">
+        <div class="carousel-inner" id="head-carousel-inner"></div>
+        <a class="carousel-control-prev" href="#head-carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#head-carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <!-- Mini Fig Torso Carousel -->
+    <div class="container">
+      <div id="torso-carousel" class="carousel slide mx-auto" style="width: 15rem;" data-interval="false">
+        <div class="carousel-inner" id="torso-carousel-inner"></div>
+        <a class="carousel-control-prev" href="#torso-carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#torso-carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
 
+    <!-- Mini Fig Leg Carousel -->
+    <div class="container">
+      <div id="leg-carousel" class="carousel slide mx-auto" style="width: 15rem;" data-interval="false">
+        <div class="carousel-inner" id="leg-carousel-inner"></div>
+        <a class="carousel-control-prev" href="#leg-carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#leg-carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </body>
 </html>
