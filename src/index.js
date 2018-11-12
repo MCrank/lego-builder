@@ -6,9 +6,11 @@ import helpers from './components/helpers/helpers';
 import legoCharacter from './components/LegoCharacter/legoCharacter';
 import partsData from './data/partsData';
 import loadCarouselEvents from './components/events/carouselEvents';
+import randomBtnEvent from './components/events/navBarEvents';
 // import './components/SavedCharacters/savedCharacters';
 
 const initApp = () => {
+  randomBtnEvent();
   loadCarouselEvents();
   partsData
     .getLegoHeads()

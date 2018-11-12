@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import 'bootstrap';
 import './legoCharacter.scss';
+import helpers from '../helpers/helpers';
 
 const loadHeadCarousel = (headsArr) => {
   let newHeadString = '';
@@ -47,4 +48,18 @@ const loadLegCarousel = (legsArr) => {
   $('#leg-carousel-inner').append(newHeadString);
 };
 
-export default { loadHeadCarousel, loadTorsoCarousel, loadLegCarousel };
+const createRandomCharacter = () => {
+  const headRandom = helpers.randomNum($('#head-carousel-inner').children().length);
+  const torsoRandom = helpers.randomNum($('#torso-carousel-inner').children().length);
+  const legRandom = helpers.randomNum($('#leg-carousel-inner').children().length);
+  $('#head-carousel').carousel(headRandom);
+  $('#torso-carousel').carousel(torsoRandom);
+  $('#leg-carousel').carousel(legRandom);
+};
+
+export default {
+  loadHeadCarousel,
+  loadTorsoCarousel,
+  loadLegCarousel,
+  createRandomCharacter,
+};
